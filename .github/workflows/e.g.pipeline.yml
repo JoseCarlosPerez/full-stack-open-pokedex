@@ -63,7 +63,7 @@ jobs:
           args: New version of Pokedex deployed.
   run-if-fail:
     runs-on: ubuntu-latest
-    if: ${{ always() && (needs.simple_deployment_pipeline.result=='failure' || needs.tag_release.result=='failure')
+    if: ${{ always() && (needs.simple_deployment_pipeline.result=='failure' || needs.tag_release.result=='failure') }}
     needs: [simple_deployment_pipeline, tag_release]
     steps:
       - uses: actions/checkout@master
