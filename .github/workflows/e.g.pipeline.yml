@@ -55,8 +55,8 @@ jobs:
     needs: [simple_deployment_pipeline, tag_release]
     steps:
       - uses: actions/checkout@master
-      - name: send custom message with args
-        uses: appleboy/discord-action@master
+      - name: Notification success
+        uses: rjstone/discord-webhook-notify@v1.0.4
         with:
           severity: info
           username: GitHub
@@ -70,8 +70,8 @@ jobs:
     needs: [simple_deployment_pipeline, tag_release]
     steps:
       - uses: actions/checkout@master
-      - name: send custom message with args
-        uses: appleboy/discord-action@master
+      - name: Notification fail
+        uses: rjstone/discord-webhook-notify@v1.0.4
         with:
           severity: error
           username: GitHub
