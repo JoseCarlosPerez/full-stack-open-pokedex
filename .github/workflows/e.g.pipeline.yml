@@ -61,7 +61,7 @@ jobs:
           severity: info
           username: GitHub
           text: New version of Pokedex deployed.
-          webhookUrl: ${{ secrets.WEBHOOK_TOKEN  }}
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOKURL  }}
   run-if-fail:
     runs-on: ubuntu-latest
     if: ${{ always() && (needs.simple_deployment_pipeline.result=='failure' || needs.tag_release.result=='failure') }}
@@ -74,4 +74,4 @@ jobs:
           severity: error
           username: GitHub
           text: New version of Pokedex failed.
-          webhookUrl: ${{ secrets.WEBHOOK_TOKEN  }}
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOKURL  }}
